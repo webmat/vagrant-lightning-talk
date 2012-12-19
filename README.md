@@ -9,12 +9,14 @@ ll
 e Vagrantfile
 ```
 
-Add following lines to Vagrantfile
+Add following lines to Vagrantfile (and remove `config.vm.box = "base"`)
+
 
 ```ruby
 config.vm.box     = "precise64"
 config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 config.vm.network :hostonly, "192.168.42.42"
+config.vm.share_folder "v-rails", "/u/apps/my_app", "."
 ```
 
 ```bash
